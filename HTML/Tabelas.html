@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table td, table th{
+            border: 1px solid #aaa;
+            padding: 5px;
+        }
+        table caption{
+            caption-side: bottom;
+            text-align: right;
+            font-style: italic;
+            font-size: 12px;
+            margin: 10px 0;
+        }
+        tfoot{
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+    <table>
+        <caption>Descrição da tabela</caption>
+        <thead>
+            <tr>
+                <th>Título 1</th>
+                <th>Título 2</th>
+                <th>Título 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Corpo 1</td>
+                <td>Corpo 2</td>
+                <td>Corpo 3</td>
+            </tr>
+            <tr>
+                <td>Corpo 1</td>
+                <td>Corpo 2</td>
+                <td>Corpo 3</td>
+            </tr>
+            <tr>
+                <td>Corpo 1</td>
+                <td>Corpo 2</td>
+                <td>Corpo 3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Corpo 1</td>
+                <td>Corpo 2</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

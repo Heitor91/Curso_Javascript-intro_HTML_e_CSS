@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.grid::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.grid .col
+{
+    width: 33.33%;
+    height: 300px;
+    background-color: blue;
+    float: left;
+}
+.grid .col .text
+{
+    color: ghostwhite;
+    font-size: large;
+}
+/*
+.pai h1+p {
+    color: darkblue;
+}
+
+.pai p+h1 {
+    color: darkorange;
+}
+[meu-atributo]{
+    color: darkgreen;
+}
+[meu-atributo="teste2"]{
+    background-color: darkorange;
+}
+.heading{
+    transition: all 2s ease-out;
+}
+.heading:hover{
+    background: rgb(1, 102, 102);
+}
+input:disabled{
+    background-color: cornflowerblue;
+    cursor: not-allowed;
+}
+input:checked{
+    width: 20px;
+    height: 20px;
+    
+}
+input:checked + p{
+    background-color: red;
+}
+ul li:nth-child(even)
+{
+    color: chartreuse;
+    background-color: rgb(1, 65, 1);
+}
+ul li:nth-child(odd)
+{
+    color: rgb(255, 121, 121);
+    background-color: rgb(65, 1, 1);
+}*/
