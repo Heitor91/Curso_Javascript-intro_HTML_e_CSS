@@ -1,0 +1,15 @@
+p{
+    /*color: red; 
+    background-color: black;*/
+    font-size: 50px;
+    /*font-style: italic;
+    font-weight: bold;
+    direction: rtl;
+    letter-spacing: 5px;
+    word-spacing: 50%;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: line-through overline underline;*/
+    text-indent: 50px;
+    text-shadow: 3px 3px 5px blue;
+}
