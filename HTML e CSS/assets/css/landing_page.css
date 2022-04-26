@@ -236,10 +236,9 @@ p{
 }
 
 .gallery-img{
-    width: 100%;
+    overflow: hidden;
     max-width: 36rem;
     max-height: 36rem;
-    overflow: hidden;
 }
 .gallery-img img{
     transition: all 300ms ease-in-out;
@@ -247,4 +246,32 @@ p{
 
 .gallery-img img:hover{
     transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+}
+
+table{
+    min-width: 360px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table caption{
+    font-style: italic;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+table td, table th{
+    border: 0.1rem solid var(--lightgrey-color);
+    text-align: left;
+    padding: 1rem;
+}
+
+tfoot td, table th{
+    background: var(--lightgrey-color);
+}   
+
+.responsive-table{
+    overflow: hidden;
+    overflow-y: auto;
 }
