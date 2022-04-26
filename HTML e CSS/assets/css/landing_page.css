@@ -19,6 +19,7 @@ font-family: 'Open Sans', sans-serif;
 */
 html{
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -39,6 +40,7 @@ h1{
 
 h2{
     font-size: 5.5rem;
+    text-transform: uppercase;
 }
 
 h3{
@@ -61,6 +63,10 @@ a{
     text-decoration: none;
 }
 
+p{
+    margin-bottom: 2rem;
+}
+
 .main-bg{
     background-image: url('../img/Abstract\ Paper.svg');
     background-size: cover;
@@ -70,12 +76,13 @@ a{
 
 .white-bg{
     background: var(--white-color);
+    color: var(--primary-color);
 }
 
 .main-content{
     max-width: 120rem;
     margin: 0 auto;
-    padding: var(--gap);
+    padding: 6rem var(--gap);
 }
 
 .section{
@@ -83,7 +90,7 @@ a{
 }
 
 .menu-spacing{
-    height: ;
+    height: -65px;
 }
 
 .menu{
@@ -148,7 +155,7 @@ a{
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: var(--gap);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .intro-text-content{
@@ -159,8 +166,9 @@ a{
 }
 
 .intro-text-content h2{
-    font-size: 8rem;
+    font-size: 6rem;
     margin-bottom: 5rem;
+    text-transform: uppercase;
     line-height: 1.2;
 }
 
@@ -172,4 +180,71 @@ a{
 .intro-img img{
     max-width: 100%;
     height: auto;
+}
+
+.top3-content{
+    max-width: 73rem;
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.grid-one-content{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 0 3rem 0 3rem;
+}
+
+.grid-main-heading{
+    padding-top: 3rem;
+    margin-bottom: 0;
+}
+
+.grid-description{
+    padding-bottom: 4rem;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: grid-counter;
+}
+
+.grid h3{
+    font-size: 3rem;
+    position: relative;
+    padding-left: 7rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.grid h3::before{
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    position: absolute;
+    font-size: 8rem;
+    font-style: italic;
+    top: -4rem;
+    left: 0;
+    transform: rotate(5deg);
+}
+
+.gallery-img{
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+}
+.gallery-img img{
+    transition: all 300ms ease-in-out;
+}
+
+.gallery-img img:hover{
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
 }
