@@ -1,0 +1,21 @@
+let varA = 'A';
+let varB = 'B';
+let varC = 'C';
+
+let mem = null;
+console.log(`VarA: ${varA}      VarB: ${varB}     VarC: ${varC}`);
+mem = varA;
+varA = varB;
+varB = varC;
+varC = mem;
+console.log(`VarA: ${varA}      VarB: ${varB}     VarC: ${varC}`);
+mem = varA;
+varA = varB;
+varB = varC;
+varC = mem;
+console.log(`VarA: ${varA}      VarB: ${varB}     VarC: ${varC}`);
+mem = varA;
+varA = varB;
+varB = varC;
+varC = mem;
+console.log(`VarA: ${varA}      VarB: ${varB}     VarC: ${varC}`);  
