@@ -1,0 +1,21 @@
+const nomes = ['Luiz', 'Maria', 'João'];
+console.log(nomes);
+
+console.log(nomes[1]);
+nomes[0] = 'Eduardo';
+console.log(nomes);
+nomes[3] = 'Luiza';
+console.log(nomes);
+console.log(nomes.length);
+nomes[nomes.length] = 'Fábio';
+console.log(nomes);
+nomes.pop();
+nomes.push('Luana');
+nomes.unshift('Fábio');
+console.log(nomes);
+nomes.shift();
+console.log(nomes);
+delete nomes[2];
+console.log(nomes);
+console.log(nomes.slice(0, 3));
+console.log(nomes.slice(2, -1));

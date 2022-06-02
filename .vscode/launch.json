@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch Lista",
+            "request": "launch",
+            "mainClass": "Lista",
+            "projectName": "CursoJS_3f75e90d"
+        },
+        {
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Open index.html",
