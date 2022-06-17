@@ -88,3 +88,24 @@ form button:hover{
     background-color: red;
     color: #FFF;
 }
+.timer{
+    font-size: 60px;
+    margin: 40px 0 20px 0;
+}
+.start, .pause, .zerar{
+    padding: 5px 25px;
+    font-size: 20px;
+    border-color: #FFF;
+    border-width: 5px;
+    border-radius: 5px;
+    font-family: cursive;
+}
+.conteiner > div{
+    width: 100%;
+}
+.stopped{
+    color: red;
+}
+.run{
+    color: greenyellow;
+}

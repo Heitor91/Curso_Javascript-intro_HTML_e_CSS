@@ -1,51 +1,45 @@
 function meuEscopo (){
-    const form = document.querySelector('.form');
-    const resultado = document.querySelector('.resultado');
+    const relogio = document.querySelector('.timer');
+    const start = document.querySelector('.start');
+    const pause = document.querySelector('.pause');
+    const zerar = document.querySelector('.zerar');
+    let segundos = 0;
+    let timer;
     
-    function calculaIMC(peso, altura){
-        return (peso / altura**2).toFixed(1);
-    };
+    function segundosTimer(segundos){
+        const data = new Date(segundos*1000)
+        return data.toLocaleTimeString('pt-BR', {hour12: false, timeZone: 'UTC'})
+    }
+    function startTimer(){
+        timer = setInterval(function(){
+            segundos++;
+            relogio.innerHTML = segundosTimer(segundos);
+        }, 1000);
+    }
+    function stopTimer(){
+        clearInterval(timer);
+    }
 
-    function retornaResultado(imc){
-        if(imc < 18.5){
-            return 'Abaixo do peso';
-        }else if(18.5 <= imc && imc <=24.9){
-            return 'Peso normal';
-        }else if(25 <= imc && imc <=29.9){
-            return 'Sobrepeso';
-        }else if(30 <= imc && imc <=34.9){
-            return 'Obesidade grau 1';
-        }else if(35 <= imc && imc <=39.9){
-            return 'Obesidade grau 2';
-        }else if(40 < imc){
-            return 'Obesidade grau 3';
-        }else{
-            return 'Valores inválidos';
-        }
-    };
-    
-    function validaInput(peso, altura){
-        if(isNaN(peso) && isNaN(altura)){
-            return `<p class="resultado-errado">Peso e altura inválidos</p>`;
-        }else if(isNaN(peso)){
-            return `<p class="resultado-errado">Peso inválido</p>`;
-        }else if(isNaN(altura)){
-            return `<p class="resultado-errado">Altura inválida</p>`;
-        }else{
-            const imc = calculaIMC(peso, altura);
-            return `<p class="resultado-sucesso">Seu IMC é ${imc}, e o resultado é ${retornaResultado(imc)}</p>`;
-        }
-    };
 
-    function recebeEventoIMC(evento){
-        evento.preventDefault();
-        const inputPeso = form.querySelector('.peso');
-        const inputAltura = form.querySelector('.altura');
-        const peso = Number(inputPeso.value);
-        const altura = Number(inputAltura.value);
-        resultado.innerHTML = validaInput(peso, altura);
-    };
-    form.addEventListener('submit', recebeEventoIMC);
+    start.addEventListener('click', function(event){
+        startTimer();
+        relogio.classList.add('run');
+        relogio.classList.remove('stopped');
+    });
+
+    pause.addEventListener('click', function(event){
+        stopTimer()
+        relogio.classList.remove('run');
+        relogio.classList.add('stopped');
+    });
+
+    zerar.addEventListener('click', function(event){
+        clearInterval(timer);
+        segundos = 0;
+        relogio.innerHTML = '00:00:00';
+        relogio.classList.remove('run');
+        relogio.classList.remove('stopped');
+    });
 }
 
 meuEscopo();
