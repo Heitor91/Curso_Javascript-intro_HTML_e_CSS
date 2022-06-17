@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700&display=swap');
+:root{
+    --primary-color: rgb(126, 208, 219);
+    --secondary-color: rgb(60, 122, 131);
+    --terciary-color: rgb(160, 255, 226);
+    --font-h1-color: #FFF;
+    --auxiliar-color: #000;
+}
+*{
+    box-sizing: border-box;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--primary-color);
+    font-family: 'Arima Madurai', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+h1{
+    font-size: 40px;
+    margin: 15px 0 15px 0;
+    color: var(--font-h1-color);
+}
+h2{
+    font-size: 25px;
+    margin: 10px 0 5px 0;
+}
+.conteiner{
+    max-width: 640px;
+    margin: 50px auto;
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 15px;
+}
+.text-conteiner{
+    display: flex;
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+.left-content, .right-content{
+    width: 50%;
+
+}
+ul{
+    list-style: none;
+}
+li{
+    font-size: 15px;
+    height: 20px;
+}
+form input, form label, form button{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+form input{
+    font-size: 24px;
+    height: 50px;
+    padding: 0 20px;
+}
+form input:focus{
+    outline: 3px solid var(--primary-color);
+}
+form button{
+    border: none;
+    background-color: var(--primary-color);
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: 700;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+form button:hover{
+    background-color: var(--terciary-color);
+}
+.resultado-sucesso{
+    padding: 5px;
+    background-color: green;
+    color: #FFF;
+}
+.resultado-errado{
+    padding: 5px;
+    background-color: red;
+    color: #FFF;
+}
