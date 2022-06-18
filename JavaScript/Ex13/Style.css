@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700&display=swap');
+:root{
+    --primary-color: rgb(126, 208, 219);
+    --secondary-color: rgb(60, 122, 131);
+    --terciary-color: rgb(160, 255, 226);
+    --font-h1-color: #FFF;
+    --auxiliar-color: #000;
+}
+*{
+    box-sizing: border-box;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--primary-color);
+    font-family: 'Arima Madurai', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+h1{
+    font-size: 40px;
+    margin: 15px 0 15px 0;
+    color: var(--font-h1-color);
+}
+h2{
+    font-size: 25px;
+    margin: 10px 0 5px 0;
+}
+.conteiner{
+    max-width: 640px;
+    margin: 50px auto;
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 15px;
+}
+.text-conteiner{
+    display: flex;
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+ul{
+    margin: 0 0 0 15%;
+    list-style: decimal;
+    background-color: var(--font-h1-color);
+    padding: 10px 20px 10px 30px;
+    width: 70%;
+    border-radius: 5px;
+    border-color: aqua;
+    border-style: solid;
+}
+.push{
+    background-color:palegreen;
+    padding: 5px;
+    border-color: greenyellow;
+    font-size: 20px;
+}
+.clear{
+    background-color: red;
+    padding: 2px;
+    border-color:lightsalmon;
+    color: #FFF;
+}
