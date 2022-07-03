@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700&display=swap');
 :root{
-    --primary-color: rgb(126, 208, 219);
-    --secondary-color: rgb(60, 122, 131);
-    --terciary-color: rgb(160, 255, 226);
+    --primary-color: rgb(0, 0, 0);
+    --secondary-color: rgb(136, 135, 135);
+    --terciary-color: rgb(255, 255, 255);
+    --test-color: rgb(30, 255, 0);
     --font-h1-color: #FFF;
     --auxiliar-color: #000;
+    --conteiner-height: 500px;
+    --conteiner-width: 360px;
+    --contpos-height: calc(50vh - var(--conteiner-height)/2);
+    --contpos-width: calc(50vw - var(--conteiner-width)/2)
 }
 *{
     box-sizing: border-box;
@@ -13,7 +18,7 @@
     padding: 0;
 }
 body{
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     font-family: 'Arima Madurai', sans-serif;
     font-size: 1.3em;
     line-height: 1.5em;
@@ -27,39 +32,49 @@ h2{
     font-size: 25px;
     margin: 10px 0 5px 0;
 }
-.conteiner{
-    max-width: 640px;
-    margin: 50px auto;
-    background: var(--secondary-color);
-    padding: 20px;
-    border-radius: 15px;
+table{
+    width: 100%;
+    height: calc(100% - 121px);
+    border-spacing: 0;
 }
-.text-conteiner{
+td{
+    width: 100%;
+    height: 70%;
+    /* background-color: var(--test-color); */
     display: flex;
-    margin-bottom: 40px;
-    padding: 10px;
+}
+.conteiner{
+    width: var(--conteiner-width);
+    height: var(--conteiner-height);
+    top: var(--contpos-height);
+    left: var(--contpos-width);
+    position: absolute;
+    border-radius: 15px;
     background-color: var(--primary-color);
-    border-radius: 10px;
 }
-ul{
-    margin: 0 0 0 15%;
-    list-style: decimal;
-    background-color: var(--font-h1-color);
-    padding: 10px 20px 10px 30px;
-    width: 70%;
-    border-radius: 5px;
-    border-color: aqua;
-    border-style: solid;
-}
-.push{
-    background-color:palegreen;
-    padding: 5px;
-    border-color: greenyellow;
+
+button{
+    width: 25%;
+    height: 80%;
+    border: 0;
+    margin: 10px 5px 2.5px 5px;
     font-size: 20px;
+    background-color: rgb(184, 184, 184);
+    border-spacing: 0;
 }
-.clear{
-    background-color: red;
-    padding: 2px;
-    border-color:lightsalmon;
+button:hover{
+    background-color: rgb(107, 107, 107);
     color: #FFF;
+}
+.display{
+    width: 100%;
+    height: 60px;
+    padding-top: 15px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    border-color: var(--terciary-color);
+    border-style: solid;
+    color: var(--font-h1-color);
+    text-align: right;
+    font-size: 40px;
 }

@@ -4,18 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 6</title>
-    <link rel="stylesheet" href="./Style.css">
+    <title>Exercicio Calculadora</title>
+    <link rel="stylesheet" href="./Assets/CSS/Style.css">
 </head>
 <body>
     <section class="conteiner">
-        <h1 class="title">Lista de Tarefas</h1>
-        <p class="text-conteiner">
-            <input type="text" class="input-task">
-            <button class="push">Adicionar</button>
-        </p>
-        <ul class="tasks"></ul>
+        <h1 class="title">Calculadora</h1>
+        <p class="display"></p>
+        <table class="buttons">
+            <tr>
+                <td>
+                    <button class="btn-clr">C</button>
+                    <button class="btn btn-opn">(</button>
+                    <button class="btn btn-csd">)</button>
+                    <button class="btn btn-ope">/</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-num">7</button>
+                    <button class="btn btn-num">8</button>
+                    <button class="btn btn-num">9</button>
+                    <button class="btn btn-ope">*</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-num">4</button>
+                    <button class="btn btn-num">5</button>
+                    <button class="btn btn-num">6</button>
+                    <button class="btn btn-ope">+</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-num">1</button>
+                    <button class="btn btn-num">2</button>
+                    <button class="btn btn-num">3</button>
+                    <button class="btn btn-ope">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-cm">.</button>
+                    <button class="btn btn-num">0</button>
+                    <button class="btn-bsp">&laquo;</button>
+                    <button class="btn-eq">=</button>
+                </td>
+            </tr>
+        </table>
     </section>
-    <script src="./Code.js"></script>
+    <script src="./Assets/Javascript/Code.js"></script>
 </body>
 </html>

@@ -1,77 +1,83 @@
-function meuEscopo (){
-    //Scope Variables------------------------------------------
-    const inputTask = document.querySelector('.input-task');
-    const pushTask = document.querySelector('.push');
-    const task = document.querySelector('.tasks');
+function startCalculator(){
+    return{
+        // Variables-----------------------------------------
+        display: document.querySelector('.display'),
+        result: false,
+        operator: false,
 
-
-    //Functions -----------------------------------------------
-    function newTask(taskText){
-        const li = document.createElement('li');
-        li.innerText = taskText;
-        task.appendChild(li);
-        clearInput();
-        newClearButton(li);
-        saveTasks();
-    }
-
-    function clearInput(){
-        inputTask.value = '';
-        inputTask.focus();
-    }
-
-    function newClearButton(li){
-        li.innerText += ' ';
-        const clearButton = document.createElement('button');
-        clearButton.innerHTML = 'Apagar';
-        clearButton.setAttribute('class', 'clear');
-        li.appendChild(clearButton);
-    }
-
-    function saveTasks(){
-        const liTasks = task.querySelectorAll('li')
-        const taskList = [];
-        for(let tasks of liTasks){
-            let taskText  = tasks.innerText;
-            taskText = taskText.replace('Apagar', '').trim();
-            taskList.push(taskText);
-        }
-        const jsonTasks = JSON.stringify(taskList);
-        localStorage.setItem('tasks', jsonTasks);
-    }
-
-    function addSavedTask(){
-        const tasks = localStorage.getItem('tasks');
-        const taskList = JSON.parse(tasks);
-        for(let task of taskList){
-            newTask(task);
-        }
-    }
-
-    //Event Listeners------------------------------------------
-
-    pushTask.addEventListener('click', function(e){
-        if(!inputTask.value) return;
-        newTask(inputTask.value);
-    })
-
-    inputTask.addEventListener('keypress', function(e){
-        if(e.keyCode === 13){
-            if(!inputTask.value) return;
-            newTask(inputTask.value);
-        }
-    });
-
-    document.addEventListener('click', function(e){
-        const el = e.target;
-        if(el.classList.contains('clear')){
-             el.parentElement.remove();
-             saveTasks();
-        }
-    });
-
-    //Call Functions --------------------------------------------
-    addSavedTask();
+        // Methods-------------------------------------------
+        start(){
+            this.cliks();
+        },
+        cliks(){
+            document.addEventListener('click', (e) =>{
+                const el = e.target;
+                if(el.classList.contains('btn')){
+                    this.operator = el.classList.contains('btn-num');
+                    this.btnToDisplay(el.innerText);
+                }
+                if(el.classList.contains('btn-clr')){
+                    this.clearDisplay();
+                }
+                if(el.classList.contains('btn-bsp')){
+                    this.backspaceDisplay();
+                }
+                if(el.classList.contains('btn-eq')){
+                    this.resultDisplay()
+                }
+            });
+        },
+        btnToDisplay(addText){
+            if(!(this.result) && this.operator){
+                this.display.innerText = addText;
+                this.result = false;
+            }else{
+                this.display.innerText += addText;
+            }
+        },
+        clearDisplay(){
+            this.display.innerText = '';
+        },
+        resultDisplay(){
+            let operate = this.display.innerText;
+            if(operate.includes('+')){
+                operate = operate.split('+');
+                operate = this.sumNubers(operate[0],operate[1]);
+            }
+            else if(operate.includes('-')){
+                operate = operate.split('-');
+                operate = this.subNumbers(operate[0],operate[1]);
+            }
+            else if(operate.includes('*')){
+                operate = operate.split('*');
+                operate = this.multNumbers(operate[0],operate[1]);
+            }
+            else if(operate.includes('/')){
+                operate = operate.split('/');
+                operate = this.divNumbers(operate[0],operate[1]);
+            }
+            this.display.innerText = operate;
+            this.result = true;
+        },
+        backspaceDisplay(){
+            let textDisplay = this.display.innerText;
+            textDisplay = textDisplay.slice(0, -1);
+            this.display.innerText = textDisplay;
+        },
+        sumNubers(valueOne, valueTwo){
+            return Number(valueOne) + Number(valueTwo);
+        },
+        subNumbers(valueOne, valueTwo){
+            return Number(valueOne) - Number(valueTwo);
+        },
+        multNumbers(valueOne, valueTwo){
+            return Number(valueOne) * Number(valueTwo);
+        },
+        divNumbers(valueOne, valueTwo){
+            return Number(valueOne) / Number(valueTwo);
+        },
+    };
 }
 
-meuEscopo();
+const calculator = startCalculator();
+calculator.start();
